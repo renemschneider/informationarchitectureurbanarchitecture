@@ -1,0 +1,95 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+     <h4>Une vision métaphorique des quartiers</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>Le pattern choisi représente la vision métaphorique qui est faite du quartier. (...)</p>
+    </div>
+    <div class="sectiontitre bg-color-lancy">
+            <h2>Pont-Rouge</h2>
+    </div>
+    <div class="div_lancy_bouton">
+        <button onclick="acacias()" id="btnACACIAS" class="button_lancy button_lancy_select">ACACIAS</button>
+        <button onclick="carouge()" id="btnCAROUGE" class="button_lancy">CAROUGE</button>
+        <button onclick="myFunction()" id="btnGRAND" class="button_lancy">GRAND-LANCY</button>
+        <button onclick="myFunction()" id="btnPETIT" class="button_lancy">PETIT-LANCY</button>
+    </div>
+
+    <div id="myACACIAS" class="container_lancy">
+        <button onclick="acacias_bib()" class="item_lancy"><p class="texte_pad">BIBLIOTHEQUE</p></button>
+        <button onclick="acacias()" class="item_lancy"><p class="texte_pad">CO-WORKING</p></button>
+        <button onclick="acacias()" class="item_lancy"><p class="texte_pad">MAISON DE QUARTIER</p></button>
+        <button onclick="acacias()" class="item_lancy"><p class="texte_pad">Cinéma</p></button>
+        <button onclick="acacias()" class="item_lancy"><p class="texte_pad">Théâtre</p></button>
+        <button onclick="acacias()" class="item_lancy"><p class="texte_pad">Park</p></button>
+    </div>
+
+    <div id="myCAROUGE" class="container_lancy">
+        <div class="item_lancy"><p class="texte_pad">This is my DIV element.1</p></div>
+        <div class="item_lancy"><p class="texte_pad">This is my DIV element.2</p></div>
+        <div class="item_lancy"><p class="texte_pad">This is my DIV element.3</p></div>
+    </div>
+
+    <div id="acacias_bib" class="container_lancy">
+        <p class="acacias_bib_titre">BIBLIOTHEQUE</p>
+        <p class="acacias_bib_texte">Office cantonal de la statistique</p>
+        <p class="acacias_bib_texte">Pavillon SICLI</p>
+    </div>
+
+       <div class="sectionButton bg-color-lancy">
+        <button onclick="location.href='{% url "pontRougeM" %}'" class="boutonbasdepage" type="button"><i class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "pontRougeD" %}'" class="boutonbasdepage" type="button"><i class="fas fa-question"></i></button>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script>
+
+    var btnACACIAS = document.getElementById("btnACACIAS");
+    var btnCAROUGE = document.getElementById("btnCAROUGE");
+    var btnGRAND = document.getElementById("btnGRAND");
+    var btnPETIT = document.getElementById("btnPETIT");
+    var divAcacias = document.getElementById("myACACIAS");
+    var divCarouge = document.getElementById("myCAROUGE");
+    var divAcacias_bib = document.getElementById("acacias_bib");
+
+    $( document ).ready(function() {
+        divAcacias.style.display = "block";
+        divCarouge.style.display = "none";
+        divAcacias_bib.style.display = "none";
+    });
+    //Accacias
+    function acacias() {
+      if (divAcacias.style.display === "none") {
+        divAcacias.style.display = "block";
+        divCarouge.style.display = "none";
+        divAcacias_bib.style.display = "none";
+        btnACACIAS.classList.add("button_lancy_select");
+        btnCAROUGE.classList.remove("button_lancy_select");
+      }
+    }
+    function acacias_bib() {
+      if (divAcacias_bib.style.display === "none") {
+        divAcacias_bib.style.display = "block";
+        divAcacias.style.display = "none";
+        divCarouge.style.display = "none";
+      }
+    }
+
+    function carouge() {
+      if (divCarouge.style.display === "none") {
+        divCarouge.style.display = "block";
+        divAcacias.style.display = "none";
+        divAcacias_bib.style.display = "none";
+        btnACACIAS.classList.remove("button_lancy_select");
+        btnCAROUGE.classList.add("button_lancy_select");
+      }
+    }
+
+</script>
+{% endblock %}

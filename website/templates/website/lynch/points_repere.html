@@ -1,0 +1,40 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/lynch.css' %}">
+
+{% endblock %}
+{% block content %}
+    <div class="div_lynch_tampon"></div>
+    <div class="section_flex">
+
+
+     <!--text-section-->
+     <div class="lynch-section-section">
+       <h2 class="titre_lynch">POINT DE REPERE</h2>
+         <p class="text_lynch">Des  objets physiques définis, comme des immeubles, des symboles topographiques, des magasins ou encore des montagnes, sont des points de repère.</p>
+  <p class="text_lynch">Ils sont facilement identifiables et choisis,  s’ils  ont  une  forme  claire,  s’ils  contrastent  avec  le contexte et/ou l’arrière-plan et si l’emplacement spatial est important.
+      L’espace fait de certains éléments des points de repère de deux manières: </br></br>1.  Il rend  l’élément  visible  depuis plusieurs lieux
+      </br>2. Il crée un contraste avec les éléments à proximité, par une  variation  de  taille  ou  d'architecture.</p>
+
+  <p class="text_lynch">Les  points  de repère sont aussi mobiles,  comme le  soleil dont  le  mouvement  est  constant  et  régulier, et permettent de s'orienter. </p>
+         <br>
+           <div class="grid-container-solo" >
+          <p class="grid-item" > <img class="img-border-patern"  src="{% static "img/lynch/point_rep.jpg" %}">
+          </p>
+           </div>
+
+        <h2 class="titre_lynch">Et sur un site web ?</h2>
+         <p class="text_lynch">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+
+         <button onclick="location.href='{% url "lynch_explication" %}'" class="bouton_section_flex text_lynch" type="button">Retour</button>
+     </div>
+     </div>
+
+
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

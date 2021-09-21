@@ -1,0 +1,26 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+{% endblock %}
+{% block content %}
+<div class="sectiontitre bg-color-champel">
+            <h2>Champel</h2>
+    </div>
+
+    <div class="container_patern">
+        <div class="titre_patern_cha"><h2 class="text_margin">Description map</h2></div>
+    </div>
+
+    <div class="sectionButton bg-color-champel">
+        <button onclick="location.href='{% url "champelM" %}'" class="boutonbasdepage" type="button"><i
+                class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "champelP" %}'" class="boutonbasdepage" type="button"><i
+                class="fas fa-th-large"></i></button>
+    </div>
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

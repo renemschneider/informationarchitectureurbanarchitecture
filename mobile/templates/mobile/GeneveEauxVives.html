@@ -1,0 +1,18 @@
+{% extends "mobile/accueil.html" %}
+{% block ajout_head %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/asuprimer.css' %}">
+{% endblock %}
+{% block nav_bar_color %}bg-color-eaux{% endblock %}
+{% block body %}
+    <div class="jumbotron jumbotron-fluid bg-color-eaux">
+        <div class="container text-center">
+            <a role="button" href="{% url "geneveEauxVivesMap" %}"
+               class="btn btn-outline-dark btn-lg {% if "/geneveEauxVives/map" in request.path %}active {% else %}text-white{% endif %}"><i
+                    class="fas fa-map-marked-alt"></i></a>
+            <a role="button" href="{% url "geneveEauxVives" %}"
+               class="btn btn-outline-dark btn-lg {% if "/geneveEauxVives/info" in request.path %}active  {% else %}text-white{% endif %}"><i
+                    class="fas fa-th-large"></i></a>
+        </div>
+    </div>
+{% endblock %}

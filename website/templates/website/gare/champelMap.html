@@ -1,0 +1,43 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css"  rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+     <h4>Une vision réel des quartier</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>La carte représente la vision réel du quartier (...)</p>
+    </div>
+<div class="sectiontitre bg-color-champel">
+            <h2>Champel</h2>
+    </div>
+
+    <div id='map' class="carte"></div>
+      <div class="sectionButton bg-color-champel">
+        <button onclick="location.href='{% url "champelM" %}'" class="boutonbasdepage" type="button"><i
+                class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "champelP" %}'" class="boutonbasdepage" type="button"><i
+                class="fas fa-th-large"></i></button>
+    </div>
+
+
+{% endblock %}
+{% block js %}
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoianVhbnBhbHBhIiwiYSI6ImNramtnN2tyczFocmwydHFvNmIxNzZreXMifQ.HQTjPB53SctR3P36s98VgQ';
+        var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [6.1533,46.1922], // starting position
+        zoom: 14 // starting zoom
+        });
+
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+    </script>
+{% endblock %}

@@ -1,0 +1,181 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+{% endblock %}
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+     <h4>Une vision métaphorique des quartiers</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>Le pattern choisi représente la vision métaphorique qui est faite du quartier. (...)</p>
+    </div>
+    <div class="sectiontitre bg-color-bachet">
+            <h2>Bachet</h2>
+    </div>
+    <div class="container_bachet">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <button type="button" class="btn btn-secondary text-bachet btn-block btn-lg collapsed " data-toggle="collapse"
+                        data-target="#collapseOne"
+                        aria-expanded="false" aria-controls="collapseOne">
+                    CAROUGE <i class="fas fa-arrow-circle-down"></i>
+                </button>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+
+
+                    <div id="accordionCAROUGE">
+                        <div class="card">
+                            <div class="card-header" id="headingOneCAROUGE">
+                                <button type="button" class="btn btn-secondary  btn-block btn-lg collapsed"
+                                        data-toggle="collapse" data-target="#collapseOneCAROUGE"
+                                        aria-expanded="false" aria-controls="collapseOneCAROUGE">
+                                    BIBLIOTHEQUES <i class="fas fa-arrow-circle-down"></i>
+                                </button>
+                            </div>
+
+                            <div id="collapseOneCAROUGE" class="collapse" aria-labelledby="headingOneCAROUGE"
+                                 data-parent="#accordionCAROUGE">
+                                <div class="card-body">
+                                    Bibliothèque communale
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-header" id="headingTwoCAROUGE">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-secondary  btn-block btn-lg collapsed"
+                                            data-toggle="collapse" data-target="#collapseTwoCAROUGE"
+                                            aria-expanded="false" aria-controls="collapseTwoCAROUGE">
+                                        CO-WORKING <i class="fas fa-arrow-circle-down"></i>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwoCAROUGE" class="collapse" aria-labelledby="headingTwoCAROUGE"
+                                 data-parent="#accordionCAROUGE">
+                                <div class="card-body">
+                                    Voisins
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingThreeCAROUGE">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-secondary  btn-block btn-lg collapsed"
+                                            data-toggle="collapse" data-target="#collapseThreeCAROUGE"
+                                            aria-expanded="false" aria-controls="collapseThreeCAROUGE">
+                                        MAISON DE QUARTIER <i class="fas fa-arrow-circle-down"></i>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThreeCAROUGE" class="collapse" aria-labelledby="headingThreeCAROUGE"
+                                 data-parent="#accordionCAROUGE">
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFourCAROUGE">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-secondary  btn-block btn-lg collapsed"
+                                            data-toggle="collapse" data-target="#collapseFourCAROUGE"
+                                            aria-expanded="false" aria-controls="collapseFourCAROUGE">
+                                       CINEMA <i class="fas fa-arrow-circle-down"></i>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFourCAROUGE" class="collapse" aria-labelledby="headingFourCAROUGE"
+                                 data-parent="#accordionCAROUGE">
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+                    <div class="card">
+                            <div class="card-header" id="headingFiveCAROUGE">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-secondary  btn-block btn-lg collapsed"
+                                            data-toggle="collapse" data-target="#collapseFiveCAROUGE"
+                                            aria-expanded="false" aria-controls="collapseFiveCAROUGE">
+                                       THEATRE <i class="fas fa-arrow-circle-down"></i>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFiveCAROUGE" class="collapse" aria-labelledby="headingFiveCAROUGE"
+                                 data-parent="#accordionCAROUGE">
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+                         <div class="card">
+                            <div class="card-header" id="headingSixCAROUGE">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-secondary  btn-block btn-lg collapsed"
+                                            data-toggle="collapse" data-target="#collapseSixCAROUGE"
+                                            aria-expanded="false" aria-controls="collapseSixCAROUGE">
+                                       PARK <i class="fas fa-arrow-circle-down"></i>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseSixCAROUGE" class="collapse" aria-labelledby="headingSixCAROUGE"
+                                 data-parent="#accordionCAROUGE">
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button type="button" class="btn btn-secondary text-bachet btn-block btn-lg collapsed" data-toggle="collapse"
+                            data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                        GRAND-LANCY <i class="fas fa-arrow-circle-down"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button type="button" class="btn btn-secondary text-bachet btn-block btn-lg collapsed" data-toggle="collapse"
+                            data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                        PLAN-LES-OUATES <i class="fas fa-arrow-circle-down"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     <div class="sectionButton bg-color-bachet">
+        <button onclick="location.href='{% url "bachetM" %}'" class="boutonbasdepage" type="button"><i class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "bachetD" %}'" class="boutonbasdepage" type="button"><i class="fas fa-question"></i></button>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+{% endblock %}

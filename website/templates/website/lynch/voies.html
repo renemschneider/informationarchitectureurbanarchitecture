@@ -1,0 +1,38 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/lynch.css' %}">
+
+{% endblock %}
+{% block content %}
+   <div class="div_lynch_tampon"></div>
+    <div class="section_flex">
+
+
+     <!--text-section-->
+     <div class="lynch-section-section">
+       <h2 class="titre_lynch">CHEMIN</h2>
+         <p class="text_lynch">Les chemins relient et organisent les  éléments environnementaux.
+             Ils contribuent à bâtir l'identité d'une ville.</p>  <p class="text_lynch">
+Une activité (une boulangerie), une attraction à proximité (un monument) ou une particularité architcturale contribuent à donner au chemin son importance.
+Si les chemins  principaux  d’une  ville  manquent  d’identité, c’est  l'identité de la ville elle-même qui est mise en difficulté.</p>
+         <br>
+           <div class="grid-container-solo" >
+          <p class="grid-item" > <img class="img-border-patern"  src="{% static "img/lynch/chemin_img.jpeg" %}">
+          </p>
+           </div>
+
+        <h2 class="titre_lynch">Et sur un site web ?</h2>
+         <p class="text_lynch">Les barres de navigation et les outils de recherche permettent aux utilisateurs de se déplacer d’un lieu à l’autre du site. Un lien est un chemin qui relie deux éléments. </p>
+
+         <button onclick="location.href='{% url "lynch_explication" %}'" class="bouton_section_flex text_lynch" type="button">Retour</button>
+     </div>
+     </div>
+
+
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

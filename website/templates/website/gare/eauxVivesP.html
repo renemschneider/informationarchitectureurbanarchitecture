@@ -1,0 +1,183 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+     <h4>Une vision métaphorique des quartiers</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>Le pattern choisi représente la vision métaphorique qui est faite du quartier. (...)</p>
+    </div>
+    <div class="sectiontitre bg-color-eaux">
+            <h2>Eaux-Vives</h2>
+    </div>
+    <div class="div_eaux_tampon"></div>
+    <div id="myPrincipal" class="container_eaux">
+        <button onclick="bib()" class="item_eaux" style="background-image: url('{% static "img/gare/img_bibli.jpg"%}')"><p class="text_btn">BIBLIOTHEQUE</p></button>
+        <button onclick="co()" class="item_eaux"><p class="text_btn">CO-WORKING</p></button>
+        <button onclick="maison()" class="item_eaux"><p class="text_btn">MAISON DE QUARTIER</p></button>
+        <button onclick="cinema()" class="item_eaux"><p class="text_btn">CINEMA</p></button>
+        <button onclick="theatre()" class="item_eaux"><p class="text_btn">THEATRE</p></button>
+        <button onclick="park()" class="item_eaux"><p class="text_btn">PARK</p></button>
+    </div>
+
+    <div id="myBib" class="container_eaux">
+
+        <div class="item_eaux" style="background-image: url('{% static "img/gare/img_bibli.jpg"%}')"><p class="text_btn">Bibliotheque municipal</p></div>
+        <div class="btn_center">
+            <button onclick="base()" class="btn_bas_bas"><i class="fas fa-arrow-left"></i> Menu</button>
+            <button onclick="co()" class="btn_bas_bas">Suite <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div id="myCo" class="container_eaux">
+        <div class="item_eaux"><p class="text_btn">Co-cowrking</p></div>
+        <div class="btn_center">
+            <button onclick="base()" class="btn_bas_bas"><i class="fas fa-arrow-left"></i> Menu</button>
+            <button onclick="maison()" class="btn_bas_bas">Suite <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div id="myMaison" class="container_eaux">
+        <div class="item_eaux"><p class="text_btn">Maison de quartier</p></div>
+        <div class="btn_center">
+            <button onclick="base()" class="btn_bas_bas"><i class="fas fa-arrow-left"></i> Menu</button>
+            <button onclick="cinema()" class="btn_bas_bas">Suite <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div id="myCinema" class="container_eaux">
+        <div class="item_eaux"><p class="text_btn">Cinéma</p></div>
+        <div class="btn_center">
+            <button onclick="base()" class="btn_bas_bas"><i class="fas fa-arrow-left"></i> Menu</button>
+            <button onclick="theatre()" class="btn_bas_bas">Suite <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div id="myTheatre" class="container_eaux">
+        <div class="item_eaux"><p class="text_btn">Théâtre</p></div>
+        <div class="btn_center">
+            <button onclick="base()" class="btn_bas_bas"><i class="fas fa-arrow-left"></i> Menu</button>
+            <button onclick="park()" class="btn_bas_bas">Suite <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div id="myPark" class="container_eaux">
+        <div class="item_eaux"><p class="text_btn">Park</p></div>
+        <div class="btn_center">
+            <button onclick="base()" class="btn_bas_bas"><i class="fas fa-arrow-left"></i> Menu</button>
+            <button onclick="bib()" class="btn_bas_bas">Suite <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="sectionButton bg-color-eaux">
+        <button onclick="location.href='{% url "eauxVivesM" %}'" class="boutonbasdepage" type="button"><i class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "eauxVivesD" %}'" class="boutonbasdepage" type="button"><i class="fas fa-question"></i></button>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script>
+    var divPrincipal = document.getElementById("myPrincipal");
+    var divBib = document.getElementById("myBib");
+    var divCo = document.getElementById("myCo");
+    var divMaison = document.getElementById("myMaison");
+    var divCinema = document.getElementById("myCinema");
+    var divTheatre = document.getElementById("myTheatre");
+    var divPark = document.getElementById("myPark");
+
+    $( document ).ready(function() {
+        divPrincipal.style.display = "block";
+        divBib.style.display = "none";
+        divCo.style.display = "none";
+        divMaison.style.display = "none";
+        divCinema.style.display = "none";
+        divTheatre.style.display = "none";
+        divPark.style.display = "none";
+    });
+
+    function base() {
+        divPrincipal.style.display = "block";
+        divBib.style.display = "none";
+        divCo.style.display = "none";
+        divMaison.style.display = "none";
+        divCinema.style.display = "none";
+        divTheatre.style.display = "none";
+        divPark.style.display = "none";
+    }
+
+    function bib() {
+      if (divBib.style.display === "none") {
+        divBib.style.display = "block";
+        divPrincipal.style.display = "none";
+        divCo.style.display = "none";
+        divMaison.style.display = "none";
+        divCinema.style.display = "none";
+        divTheatre.style.display = "none";
+        divPark.style.display = "none";
+      }
+    }
+
+    function co() {
+      if (divCo.style.display === "none") {
+        divBib.style.display = "none";
+        divPrincipal.style.display = "none";
+        divCo.style.display = "block";
+        divMaison.style.display = "none";
+        divCinema.style.display = "none";
+        divTheatre.style.display = "none";
+        divPark.style.display = "none";
+      }
+    }
+
+     function maison() {
+      if (divMaison.style.display === "none") {
+        divBib.style.display = "none";
+        divPrincipal.style.display = "none";
+        divCo.style.display = "none";
+        divMaison.style.display = "block";
+        divCinema.style.display = "none";
+        divTheatre.style.display = "none";
+        divPark.style.display = "none";
+      }
+    }
+
+     function cinema() {
+      if (divCinema.style.display === "none") {
+        divBib.style.display = "none";
+        divPrincipal.style.display = "none";
+        divCo.style.display = "none";
+        divMaison.style.display = "none";
+        divCinema.style.display = "block";
+        divTheatre.style.display = "none";
+        divPark.style.display = "none";
+      }
+    }
+
+     function theatre() {
+      if (divTheatre.style.display === "none") {
+        divBib.style.display = "none";
+        divPrincipal.style.display = "none";
+        divCo.style.display = "none";
+        divMaison.style.display = "none";
+        divCinema.style.display = "none";
+        divTheatre.style.display = "block";
+        divPark.style.display = "none";
+      }
+    }
+
+     function park() {
+      if (divPark.style.display === "none") {
+        divBib.style.display = "none";
+        divPrincipal.style.display = "none";
+        divCo.style.display = "none";
+        divMaison.style.display = "none";
+        divCinema.style.display = "none";
+        divTheatre.style.display = "none";
+        divPark.style.display = "block";
+      }
+    }
+    </script>
+{% endblock %}

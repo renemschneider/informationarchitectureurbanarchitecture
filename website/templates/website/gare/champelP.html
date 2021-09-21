@@ -1,0 +1,59 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+     <h4>Une vision métaphorique des quartiers</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>Le pattern choisi représente la vision métaphorique qui est faite du quartier. (...)</p>
+    </div>
+    <div class="sectiontitre bg-color-champel">
+            <h2>Champel</h2>
+    </div>
+    <div class="grid">
+        <div class="item center-champel" tabindex="4">
+            <div class="box">
+                <a href=""><p><i class="fas fa-book fa-5x color_icons"></i></p></a>
+            </div>
+        </div>
+        <div class="item" tabindex="6">
+            <div class="box">
+                <a href=""><p><i class="far fa-question-circle fa-5x color_icons"></i></p></a>
+            </div>
+        </div>
+        <div class="item" tabindex="1">
+            <div class="box">
+                <a href=""><p><i class="fas fa-home fa-5x color_icons"></i></p></a>
+            </div>
+        </div>
+        <div class="item" tabindex="2">
+            <div class="box">
+                <a href=""><p><i class="fas fa-5x fa-film color_icons"></i></p></a>
+            </div>
+        </div>
+        <div class="item" tabindex="5">
+            <div class="box">
+                <a href=""><p><i class="fas fa-5x fa-theater-masks color_icons"></i></p></a>
+            </div>
+        </div>
+        <div class="item" tabindex="3">
+            <div class="box">
+                <a href=""><p><i class="fas fa-5x fa-tree color_icons"></i></p></a>
+            </div>
+        </div>
+    </div>
+     <div class="sectionButton bg-color-champel">
+        <button onclick="location.href='{% url "champelM" %}'" class="boutonbasdepage" type="button"><i
+                class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "champelD" %}'" class="boutonbasdepage" type="button"><i
+                class="fas fa-question"></i></button>
+    </div>
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

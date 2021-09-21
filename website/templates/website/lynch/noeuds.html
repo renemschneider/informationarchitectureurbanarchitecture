@@ -1,0 +1,37 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/lynch.css' %}">
+
+{% endblock %}
+{% block content %}
+<div class="div_lynch_tampon"></div>
+    <div class="section_flex">
+
+
+     <!--text-section-->
+     <div class="lynch-section-section">
+       <h2 class="titre_lynch">NOEUD</h2>
+         <p class="text_lynch">Les noeuds représentent le point de départ ou d'arrivée d'un voyage. Ils sont ainsi les points  stratégiques d’une  ville.</p>
+         <p class="text_lynch">Il s'agit essentiellement d'intersections, de lieux  d’arrêt et/ou de  rupture  des  transports,  de croisements  ou convergences  de  chemins.</p>
+  <p class="text_lynch">Le nœud est le centre d’intérêt et le symbole d’un quartier. Il est aussi le lieu où des décisions sont prises. Par conséquent, les personnes les traversant portent leur attention à ces espaces et perçoivent les éléments placés  à  proximité avec  plus  de  clarté  que d’habitude. Les  objets  situés  en  ces  lieux acquièrent d'ailleurs de l'importance du fait de leur emplacement.</p>
+         <br>
+           <div class="grid-container-solo">
+          <p class="grid-item" > <img class="img-border-patern"  src="{% static "img/lynch/place_neuve.jpeg"  %}">
+          </p>
+           </div>
+
+        <h2 class="titre_lynch">Et sur un site web ?</h2>
+         <p class="text_lynch">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+
+         <button onclick="location.href='{% url "lynch_explication" %}'" class="bouton_section_flex text_lynch" type="button">Retour</button>
+     </div>
+     </div>
+
+
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

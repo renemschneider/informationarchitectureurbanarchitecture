@@ -1,0 +1,39 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+     <h4>Une vision métaphorique des quartiers</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>Le pattern choisi représente la vision métaphorique qui est faite du quartier. (...)</p>
+    </div>
+    <div class="sectiontitre bg-color-lancy">
+            <h2>Pont-Rouge</h2>
+    </div>
+    <div class="container_patern">
+        <div class="titre_patern_p"><h2 class="text_margin">Analyse gare</h2></div>
+        <p class="text_padding">La gare de Pont-Rouge dessert quatre villes : Petit-Lancy, Grand-Lancy, Carouge et Acacias.</p>
+        <p class="text_padding"><b>Orientation</b></p>
+        <p class="text_padding">L’orientation au sortir de la gare est plutôt bonne. L’utilisateur s’oriente facilement grâce à la présence de signalétique.</p>
+        <p class="text_padding"><b>Circulation (Navigation)</b></p>
+        <p class="text_padding">Les zones environnantes sont accessibles.</p>
+        <p class="text_padding" ><b>Conception visuelle</b></p>
+        <p class="text_padding">-</p>
+        <div class="titre_patern_p"><h2 class="text_margin">Patern: Vertical Stacks</h2></div>
+        <p class="text_padding"><b>Justification pattern</b></p>
+        <p class="text_padding">Le pattern Vertical Stacks offre la possibilité à l’utilisateur de modifier son espace d'une manière qui lui convient et d’avoir une meilleure lisibilité. Les onglets dans la partie supérieure permettent de se localiser et d’avoir une vision complète de l’environnement physique et virtuel.</p>
+    </div>
+
+     <div class="sectionButton bg-color-lancy">
+        <button onclick="location.href='{% url "pontRougeM" %}'" class="boutonbasdepage" type="button"><i class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "pontRougeP" %}'" class="boutonbasdepage" type="button"><i class="fas fa-th-large"></i></button>
+    </div>
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

@@ -1,0 +1,140 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+        <h4>Une vision métaphorique des quartiers</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>Le pattern choisi représente la vision métaphorique qui est faite du quartier. (...)</p>
+    </div>
+    <div class="sectiontitre bg-color-carouge">
+            <h2>Cornavin</h2>
+    </div>
+    <div class="container_cornavin">
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item carousel-padding-cornavin"
+         data-ride="carousel" data-interval="false" style="padding: 0px">
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active" >
+                <div class="col-md-12" style="padding: 0px; float:left">
+                    <div class="card mb-2 card-size-cornavin">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">1 Grottes</h4>
+                            <ul>
+                                <li class="list-padding">Bibliotheque</li>
+                                <li class="list-padding">Co-working</li>
+                                <li class="list-padding">Maison de quartier</li>
+                                <li class="list-padding">Cinéma</li>
+                                <li class="list-padding">Théâtre</li>
+                                <li class="list-padding">Parc</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.First slide-->
+
+            <!--Second slide-->
+            <div class="carousel-item">
+                <div class="col-md-12" style="padding: 0px;float:left">
+                    <div class="card mb-2 card-size-cornavin">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">2 Grottes</h4>
+                            <ul>
+                                <li class="list-padding">Bibliotheque</li>
+                                <li class="list-padding">Co-working</li>
+                                <li class="list-padding">Maison de quartier</li>
+                                <li class="list-padding">Cinéma</li>
+                                <li class="list-padding">Théâtre</li>
+                                <li class="list-padding">Parc</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.Second slide-->
+
+            <!--Third slide-->
+            <div class="carousel-item">
+                <div class="col-md-12" style="padding: 0px;float:left">
+                    <div class="card mb-2 card-size-cornavin">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">3 Grottes</h4>
+                            <ul>
+                                <li class="list-padding">Bibliotheque</li>
+                                <li class="list-padding">Co-working</li>
+                                <li class="list-padding">Maison de quartier</li>
+                                <li class="list-padding">Cinéma</li>
+                                <li class="list-padding">Théâtre</li>
+                                <li class="list-padding">Parc</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Third slide-->
+
+            <!--Forth slide-->
+            <div class="carousel-item">
+                <div class="col-md-12" style="padding: 0px;float:left">
+                    <div class="card mb-2 card-size-cornavin">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">4 Grottes</h4>
+                            <ul>
+                                <li class="list-padding">Bibliotheque</li>
+                                <li class="list-padding">Co-working</li>
+                                <li class="list-padding">Maison de quartier</li>
+                                <li class="list-padding">Cinéma</li>
+                                <li class="list-padding">Théâtre</li>
+                                <li class="list-padding">Parc</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Forth slide-->
+
+        </div>
+        <!--/.Slides-->
+
+        <!--Indicators
+
+        <ol class="carousel-indicators text-dark">
+          <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+          <li data-target="#multi-item-example" data-slide-to="1"></li>
+        </ol>
+
+         Indicators-->
+
+
+        <!--Controls-->
+        <div class="text-center changeSlide-padding-cornavin">
+            <a class="btn btn-lg " href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+            <a class="btn btn-lg" href="#multi-item-example" data-slide="next"><i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+        <!--/.Controls-->
+</div>
+    </div>
+
+    <div class="sectionButton bg-color-carouge">
+        <button onclick="location.href='{% url "cornavinM" %}'" class="boutonbasdepage" type="button"><i class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "cornavinD" %}'" class="boutonbasdepage" type="button"><i class="fas fa-question"></i></button>
+    </div>
+
+{% endblock %}
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+{% endblock %}

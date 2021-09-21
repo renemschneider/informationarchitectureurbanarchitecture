@@ -1,0 +1,47 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/website/formulaire.css' %}">
+
+
+{% endblock %}
+{% block content %}
+
+<div class="section_flex_inverted">
+     <!--text-section-->
+    <div class="bottom-section">
+        <h2 class="titre_bottom">LA VILLE DE DEMAIN</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium autem commodi cum debitis, dignissimos earum esse eum impedit iste molestias neque nesciunt numquam praesentium qui quibusdam repellat similique tempora tenetur.</p>
+        <form action="{% url 'formulaire' %}"  method="POST">
+        {% csrf_token %}
+         <p class="couleur_question"><b>Votre nom ? </b></p>
+              <input class="input_form cotainer_reponse"  type="text" id="f1" name="nom" maxlength="255"><br><br>
+         <p class="couleur_question"><b>Dans quel quartier vivez-vous?</b></p>
+             <input class="input_form cotainer_reponse" type="text" id="f2" name="quartier_1"  maxlength="255" ><br><br>
+         <p class="couleur_question"><b>A quoi ressembleront les quartiers dans le futur?</b></p>
+
+              <input class="input_form cotainer_reponse" type="text" id="f3" name="quartier_2"  maxlength="255" ><br><br>
+
+         <p class="couleur_question"><b>Comment devrait s'organiser la ville de demain?</b></p>
+
+              <input class=" input_form cotainer_reponse"  type="text" id="f4" name="ville_1"  maxlength="255" ><br><br>
+
+         <p class="couleur_question"><b>Quel place pour l'humain dans la ville de demain?</b></p>
+
+              <input class="input_form cotainer_reponse"  type="text" id="f5" name="ville_2"  maxlength="255" ><br><br>
+            <input class="bouton_section_flex" type="submit" value="Submit">
+        </form>
+     </div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+{% block js %}
+
+{% endblock %}

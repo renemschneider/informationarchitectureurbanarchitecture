@@ -1,0 +1,25 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="sectiontitre bg-color-eaux">
+            <h2>Eaux-Vives</h2>
+    </div>
+    <div class="div_eaux_tampon"></div>
+
+    <div class="container_patern">
+        <div class="titre_patern_e"><h2 class="text_margin">Description map</h2></div>
+    </div>
+
+    <div class="sectionButton bg-color-eaux">
+        <button onclick="location.href='{% url "eauxVivesM" %}'" class="boutonbasdepage" type="button"><i class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "eauxVivesP" %}'" class="boutonbasdepage" type="button"><i class="fas fa-th-large"></i></button>
+    </div>
+
+
+
+{% endblock %}
+{% block js %}
+{% endblock %}

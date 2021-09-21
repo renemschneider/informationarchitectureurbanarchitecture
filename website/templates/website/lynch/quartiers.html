@@ -1,0 +1,41 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/lynch.css' %}">
+
+{% endblock %}
+{% block content %}
+    <div class="div_lynch_tampon"></div>
+    <div class="section_flex">
+
+
+     <!--text-section-->
+     <div class="lynch-section-section">
+       <h2 class="titre_lynch">QUARITER</h2>
+         <p class="text_lynch">Les quartiers ou arrondissement sont des zones relativement grandes d’une ville.</p>
+
+         <p class="text_lynch">Le  caractère,  l’espace,  la  forme,  le  détail,  les symboles, le type d’immeubles, l’utilisation, les activités présentes, les habitants et la topographie définissent les quartiers.</p>
+
+  <p class="text_lynch">La personne identifie les  quartiers  grâce  à  leur structuration interieure, mais les quartiers sont aussi souvent associés à des éléments qui sont visibles de l’extérieur.</p>
+         <br>
+           <div class="grid-container-solo" >
+          <p class="grid-item" > <img class="img-border-patern"  src="{% static "img/lynch/quartier_img2.jpg" %}">
+          </p>
+           </div>
+
+        <h2 class="titre_lynch">Et sur un site web ?</h2>
+         <p class="text_lynch">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+
+         <button onclick="location.href='{% url "lynch_explication" %}'" class="bouton_section_flex text_lynch" type="button">Retour</button>
+     </div>
+     </div>
+
+
+</div>
+
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

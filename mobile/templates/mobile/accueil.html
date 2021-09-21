@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Visiter un site internet comme on visite une ville">
+    <meta name="author" content="Stephane Jermini">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+ {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/asuprimer.css' %}">
+      {% block ajout_head %}
+    {% endblock %}
+      <title>UEN</title>
+
+  </head>
+  <body>
+    <header>
+        <nav class="{% block nav_bar_color %}{% endblock %} navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="{% url "home" %}">UEN</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item {% if "/carougeBachet" in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url "carougeBachetMap" %}">Carouge-Bachet</a>
+              </li>
+              <li class="nav-item {% if "/champelHopital" in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url "champelHopitalMap" %}">Champel-Hôpital<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item {% if "/cheneBourg" in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url "cheneBourgMap" %}">Chêne-Bourg<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item {% if "/cornavin" in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url "cornavinMap" %}">Cornavin<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item {% if "/geneveEauxVives" in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url "geneveEauxVivesMap" %}">Genève-Eaux-Vives<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item {% if "/lancyPontRouge" in request.path %}active{% endif %}">
+                <a class="nav-link" href="{% url "lancyPontRougeMap" %}">Lancy-Pont-Rouge<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    {% block body %}
+    {% endblock %}
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+            <p>LOGO ?</p>
+          <small class="d-block mb-3 text-muted">2021</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Informations</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Architecto at</a></li>
+            <li><a class="text-muted" href="#">autem ea eius est</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Equipe</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Lorem ipsumadipisicing elit. </a></li>
+            <li><a class="text-muted" href="#"> dolor sit amet, consectetur </a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5d0018732f.js" crossorigin="anonymous"></script>
+  </body>
+</html>

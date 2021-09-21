@@ -1,0 +1,33 @@
+{% extends "mobile/accueil.html" %}
+ {% block ajout_head %}
+      <!-- MAP -->
+     <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
+     <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css"  rel='stylesheet'>
+ {% endblock %}
+{% block nav_bar_color %}bg-color-lancy{% endblock %}
+{% block body %}
+
+    <div id='map' class="container" style='width: 300px; height: 600px;'>
+
+    </div>
+    <div class="jumbotron jumbotron-fluid bg-color-lancy">
+      <div class="container text-center">
+          <a role="button" href="{% url "lancyPontRougeMap" %}" class="btn btn-outline-light btn-lg {% if "/lancyPontRouge/map" in request.path %}active{% endif %}"><i class="fas fa-map-marked-alt"></i></a>
+          <a role="button" href="{% url "lancyPontRouge" %}" class="btn btn-outline-light btn-lg {% if "/lancyPontRouge/info" in request.path %}active{% endif %}"><i class="fas fa-th-large"></i></a>
+      </div>
+    </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoianVhbnBhbHBhIiwiYSI6ImNramtnN2tyczFocmwydHFvNmIxNzZreXMifQ.HQTjPB53SctR3P36s98VgQ';
+        var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [6.1254,46.1892], // starting position
+        zoom: 14 // starting zoom
+        });
+
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+    </script>
+{% endblock %}
+
+

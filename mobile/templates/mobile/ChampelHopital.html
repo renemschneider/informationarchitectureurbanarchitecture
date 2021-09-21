@@ -1,0 +1,54 @@
+{% extends "mobile/accueil.html" %}
+{% block ajout_head %}
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/asuprimer.css' %}">
+{% endblock %}
+{% block nav_bar_color %}bg-color-champel{% endblock %}
+{% block body %}
+
+<div class="grid-padding-champel">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <a href=""><p class="color-carouge text-center"><i class="fas fa-book fa-10x"></i></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+               <a href=""><p class="color-carouge text-center"><i class="far fa-question-circle fa-10x "></i></p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="grid-padding-champel">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <a href=""><p class="color-carouge text-center"><i class="fas fa-home fa-10x"></i></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <div class="jumbotron jumbotron-fluid bg-color-champel">
+        <div class="container text-center">
+            <a role="button" href="{% url "champelHopitalMap" %}"
+               class="btn btn-outline-dark btn-lg {% if "/champelHopital/map" in request.path %}active {% else %}text-white{% endif %}"><i
+                    class="fas fa-map-marked-alt"></i></a>
+            <a role="button" href="{% url "champelHopital" %}"
+               class="btn btn-outline-dark btn-lg {% if "/champelHopital/info" in request.path %}active  {% else %}text-white{% endif %}"><i
+                    class="fas fa-th-large"></i></a>
+        </div>
+    </div>
+{% endblock %}

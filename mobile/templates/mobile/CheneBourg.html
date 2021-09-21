@@ -1,0 +1,73 @@
+{% extends "mobile/accueil.html" %}
+{% block ajout_head %}
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/asuprimer.css' %}">
+{% endblock %}
+{% block nav_bar_color %}bg-color-chene{% endblock %}
+{% block body %}
+    <div class="list-padding-chene">
+        <ul class="list-group">
+            <li class="list-group-item border bottom-border-chene">BIBLIOTHEQUE</li>
+            <li class="list-group-item">
+              <div class="row">
+                   <div class="col-sm-6">
+                    <ul>
+                        <li >Bibliobus</li>
+                        <li >Bibliothèque 2</li>
+                    </ul>
+                   </div>
+                  <div class="col-sm-6">
+                    <ul>
+                        <li >Bibliothèque 3</li>
+                        <li >Bibliothèque 4</li>
+                    </ul>
+                   </div>
+              </div>
+            </li>
+            <li class="list-group-item border bottom-border-chene">CO-WORKING</li>
+            <li class="list-group-item">
+              <div class="row">
+                   <div class="col-sm-6">
+                    <ul>
+                        <li >Co-working 1</li>
+                        <li >Co-working 2</li>
+                    </ul>
+                   </div>
+                  <div class="col-sm-6">
+                    <ul>
+                        <li >Co-working 3</li>
+                        <li >Co-working 4</li>
+                    </ul>
+                   </div>
+              </div>
+            </li>
+            <li class="list-group-item border bottom-border-chene">MAISON DE QUARTIER</li>
+            <li class="list-group-item">
+              <div class="row ">
+                   <div class="col-sm-6">
+                    <ul>
+                        <li >Le spot</li>
+                        <li >Maison de quartier 2</li>
+                    </ul>
+                   </div>
+                  <div class="col-sm-6">
+                    <ul>
+                        <li >Maison de quartier 3</li>
+                        <li >Maison de quartier 4</li>
+                    </ul>
+                   </div>
+              </div>
+            </li>
+        </ul>
+    </div>
+    <div class="jumbotron jumbotron-fluid bg-color-chene">
+        <div class="container text-center">
+            <a role="button" href="{% url "cheneBourgMap" %}"
+               class="btn btn-outline-dark btn-lg {% if "/cheneBourg/map" in request.path %}active {% else %}text-white{% endif %}"><i
+                    class="fas fa-map-marked-alt"></i></a>
+            <a role="button" href="{% url "cheneBourg" %}"
+               class="btn btn-outline-dark btn-lg {% if "/cheneBourg/info" in request.path %}active  {% else %}text-white{% endif %}"><i
+                    class="fas fa-th-large"></i></a>
+        </div>
+    </div>
+{% endblock %}

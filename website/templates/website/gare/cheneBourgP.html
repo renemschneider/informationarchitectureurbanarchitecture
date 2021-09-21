@@ -1,0 +1,123 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+{% endblock %}
+
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+     <h4>Une vision métaphorique des quartiers</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>Le pattern choisi représente la vision métaphorique qui est faite du quartier. (...)</p>
+    </div>
+    <div class="sectiontitre bg-color-chene">
+            <h2>Chene-Bourg</h2>
+    </div>
+    <div class="div_chene_tampon"></div>
+    <div class="container_chene">
+            <ul class="list-group">
+                <li class="list-group-item bottom-border-cheneb">BIBLIOTHEQUE</li>
+                <li class="list-group-item bottom-border-cheneb-top">
+                  <div class="row">
+                       <div class="col-6">
+                        <ul>
+                            <li >Bibliobus</li>
+                        </ul>
+                       </div>
+                      <div class="col-6">
+                        <ul>
+                            <li >Bibliothèque 3</li>
+                        </ul>
+                       </div>
+                  </div>
+                </li>
+                <li class="list-group-item bottom-border-cheneb">CO-WORKING</li>
+                <li class="list-group-item bottom-border-cheneb-top">
+                  <div class="row">
+                       <div class="col-6">
+                        <ul>
+                            <li >Co-working 1</li>
+                        </ul>
+                       </div>
+                      <div class="col-6">
+                        <ul>
+                            <li >Co-working 3</li>
+                        </ul>
+                       </div>
+                  </div>
+                </li>
+                <li class="list-group-item bottom-border-cheneb">MAISON DE QUARTIER</li>
+                <li class="list-group-item bottom-border-cheneb-top">
+                  <div class="row ">
+                       <div class="col-6">
+                        <ul>
+                            <li >Le spot</li>
+                        </ul>
+                       </div>
+                      <div class="col-6">
+                        <ul>
+                            <li >Maison de quartier 3</li>
+                        </ul>
+                       </div>
+                  </div>
+                </li>
+                <li class="list-group-item bottom-border-cheneb">CINEMA</li>
+                <li class="list-group-item bottom-border-cheneb-top">
+                  <div class="row ">
+                       <div class="col-6">
+                        <ul>
+                            <li >Le spot</li>
+                        </ul>
+                       </div>
+                      <div class="col-6">
+                        <ul>
+                            <li >CINEMA 3</li>
+                        </ul>
+                       </div>
+                  </div>
+                </li>
+                <li class="list-group-item bottom-border-cheneb">THEATRE</li>
+                <li class="list-group-item bottom-border-cheneb-top">
+                  <div class="row ">
+                       <div class="col-6">
+                        <ul>
+                            <li >Le spot</li>
+                        </ul>
+                       </div>
+                      <div class="col-6">
+                        <ul>
+                            <li >THEATRE 3</li>
+                        </ul>
+                       </div>
+                  </div>
+                </li><li class="list-group-item bottom-border-cheneb">PARK</li>
+                <li class="list-group-item bottom-border-cheneb-top">
+                  <div class="row ">
+                       <div class="col-6">
+                        <ul>
+                            <li >Le spot</li>
+                        </ul>
+                       </div>
+                      <div class="col-6">
+                        <ul>
+                            <li >PARK 3</li>
+                        </ul>
+                       </div>
+                  </div>
+                </li>
+            </ul>
+    </div>
+    <div class="sectionButton bg-color-chene">
+        <button onclick="location.href='{% url "cheneBourgM" %}'" class="boutonbasdepage" type="button"><i
+                class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "cheneBourgD" %}'" class="boutonbasdepage" type="button"><i
+                class="fas fa-question"></i></button>
+    </div>
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

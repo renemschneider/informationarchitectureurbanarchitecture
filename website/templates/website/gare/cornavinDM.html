@@ -1,0 +1,22 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+{% block content %}
+    <div class="sectiontitre bg-color-carouge">
+            <h2>Cornavin</h2>
+    </div>
+     <div class="container_patern" id="section_explication">
+        <div class="titre_patern_cor"><h2 class="text_margin">Description map</h2></div>
+    </div>
+
+    <div class="sectionButton bg-color-carouge">
+        <button onclick="location.href='{% url "cornavinM" %}'" class="boutonbasdepage" type="button"><i class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "cornavinP" %}'" class="boutonbasdepage" type="button"><i class="fas fa-th-large"></i></button>
+    </div>
+
+{% endblock %}
+{% block js %}
+{% endblock %}

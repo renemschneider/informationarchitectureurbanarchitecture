@@ -1,0 +1,362 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/website/accueil.css' %}">
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+{% endblock %}
+{% block content %}
+<!-- Swiper -->
+  <div class="swiper swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+
+          <div class="swiper-text-container">
+
+                <div class="title" data-swiper-parallax="-300">Est-ce qu'un site Web ressemble à une ville?</div>
+                <div class="subtitle" data-swiper-parallax="-200">UEN - Urbanisons l'espace numérique, projet de la filière Information documentaire de la HEG Genève, explore les analogies possibles entre la ville et le site Web.</div>
+
+          </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="swiper-text-container">
+                <div class="title" data-swiper-parallax="-300">Pourquoi le CEVA?</div>
+                <div class="subtitle" data-swiper-parallax="-200">Les gares du CEVA redéfinissent le tissu urbain genevois. Elles sont les nœuds des quartiers et permettent d'explorer les analogies entre la structuration des site Web et celle des villes. </div>
+           </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="swiper-text-container">
+                <div class="title" data-swiper-parallax="-300">Quels éléments partagent une ville et un site web?</div>
+                <div class="subtitle" data-swiper-parallax="-200">Sur les sites Web comme dans les villes, on s'oriente et on se déplace. L'orientation dans une ville se fait grâce à des éléments universels (5 principes de Kevin Lynch) et ils sont aussi identifiables sur les sites Web.</div>
+           </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination-white"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-prev swiper-button-white"></div>
+    <div class="swiper-button-next swiper-button-white"></div>
+  </div>
+
+<h2 class="titre">LES GARES</h2>
+
+<div class="grid-container" >
+  <a class="grid-item"  href="{% url "cornavinM"  %}">
+      <p class="text-grid">Cornavin</p>
+  </a>
+  <a class="grid-item"  href="{% url "pontRougeM"  %}">
+      <p class="text-grid">Pont-Rouge</p>
+  </a>
+  <a class="grid-item"  href="{% url "bachetM"  %}">
+      <p class="text-grid">Bachet</p>
+  </a>
+  <a class="grid-item"  href="{% url "champelM"  %}">
+      <p class="text-grid">Champel</p>
+  </a>
+  <a class="grid-item"  href="{% url "eauxVivesM"  %}">
+      <p class="text-grid">Eaux-Vives</p>
+  </a>
+  <a class="grid-item"  href="{% url "cheneBourgM"  %}">
+      <p class="text-grid">Chêne-Bourg</p>
+  </a>
+</div>
+
+<div class="section_flex">
+
+     <!--image section-->
+
+    <a class="left-section modal__trigger" data-modal="#modal2"  style="background-image: url('{% static "img/accueil/GoogleMapLynch.png" %}')">
+     </a>
+     <!--text-section-->
+     <div class="right-section">
+       <h1>PRINCIPES DE LYNCH</h1>
+       <p> Par son ouvrage fondateur « L’image de la cité » (The Image of the City, 1960), Lynch refonda la légitimité de l’analyse visuelle du paysage urbain, à un moment où la pratique urbanistique était essentiellement fondée sur l’analyse fonctionnelle de l’espace. </p>
+        <button onclick="location.href='{% url "lynch_explication" %}'" class="bouton_section_flex" type="button">Plus</button>
+     </div>
+
+</div>
+
+<div class="section_flex_inverted">
+
+
+
+     <!--text-section-->
+     <div class="bottom-section-right">
+       <h2 class="titre_bottom">LA VILLE DE DEMAIN</h2>
+         <p class="couleur_question"><b>Dans quel quartier vivez-vous?</b></p>
+         <div class="cotainer_reponse">
+             <p>{{ objet.quartier_a }}</p>
+         </div>
+         <p class="couleur_question"><b>A quoi ressembleront les quartiers ? </b></p>
+         <div class="cotainer_reponse">
+             <p>{{ objet.quartier_futur_a}}</p>
+         </div>
+         <p class="couleur_question"><b>Comment devrait s'organiser la ville de demain?</b></p>
+         <div class="cotainer_reponse">
+             <p>{{ objet.org_ville_demain_a }}</p>
+         </div>
+         <p class="couleur_question"><b>Quelle place pour l'humain dans la ville de demain?</b></p>
+         <div class="cotainer_reponse">
+             <p>{{ objet.hum_ville_demain_a }}</p>
+         </div>
+     </div>
+<!--text-section-->
+     <div class="bottom-section-left" style="text-align: center;">
+         <div class="cotainer_reponse_acces_form">
+             <p style="text-align: center;">Accès au formulaire :</p>
+             <button style="text-align: center;" onclick="location.href='{% url "formulaire" %}'" class="bouton_section_flex_inverted" type="button">Formulaire</button>
+         </div>
+     </div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+{% block modal %}
+
+
+<div id="modal2" class="modal modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+
+           <iframe class="map" src="https://maphub.net/embed/136784?button=0" frameborder="0"></iframe>
+
+			<!-- modal close button -->
+			<a href="" class="modal__close demo-close">
+				<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+			</a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}1234567890
+
+
+
+
+{% block js %}
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+
+  var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+
+  //--------------
+
+
+  var Modal = (function() {
+
+  var trigger = $qsa('.modal__trigger'); // what you click to activate the modal
+  var modals = $qsa('.modal'); // the entire modal (takes up entire window)
+  var modalsbg = $qsa('.modal__bg'); // the entire modal (takes up entire window)
+  var content = $qsa('.modal__content'); // the inner content of the modal
+  var closers = $qsa('.modal__close'); // an element used to close the modal
+  var w = window;
+  var isOpen = false;
+  var contentDelay = 400; // duration after you click the button and wait for the content to show
+  var len = trigger.length;
+
+  // make it easier for yourself by not having to type as much to select an element
+  function $qsa(el) {
+    return document.querySelectorAll(el);
+  }
+
+  var getId = function(event) {
+
+    event.preventDefault();
+    var self = this;
+    // get the value of the data-modal attribute from the button
+    var modalId = self.dataset.modal;
+    var len = modalId.length;
+    // remove the '#' from the string
+    var modalIdTrimmed = modalId.substring(1, len);
+    // select the modal we want to activate
+    var modal = document.getElementById(modalIdTrimmed);
+    // execute function that creates the temporary expanding div
+    makeDiv(self, modal);
+  };
+
+  var makeDiv = function(self, modal) {
+
+    var fakediv = document.getElementById('modal__temp');
+
+    /**
+     * if there isn't a 'fakediv', create one and append it to the button that was
+     * clicked. after that execute the function 'moveTrig' which handles the animations.
+     */
+
+    if (fakediv === null) {
+      var div = document.createElement('div');
+      div.id = 'modal__temp';
+      self.appendChild(div);
+      moveTrig(self, modal, div);
+    }
+  };
+
+  var moveTrig = function(trig, modal, div) {
+    var trigProps = trig.getBoundingClientRect();
+    var m = modal;
+    var mProps = m.querySelector('.modal__content').getBoundingClientRect();
+    var transX, transY, scaleX, scaleY;
+    var xc = w.innerWidth / 2;
+    var yc = w.innerHeight / 2;
+
+    // this class increases z-index value so the button goes overtop the other buttons
+    trig.classList.add('modal__trigger--active');
+
+    // these values are used for scale the temporary div to the same size as the modal
+    scaleX = mProps.width / trigProps.width;
+    scaleY = mProps.height / trigProps.height;
+
+    scaleX = scaleX.toFixed(3); // round to 3 decimal places
+    scaleY = scaleY.toFixed(3);
+
+
+    // these values are used to move the button to the center of the window
+    transX = Math.round(xc - trigProps.left - trigProps.width / 2);
+    transY = Math.round(yc - trigProps.top - trigProps.height / 2);
+
+		// if the modal is aligned to the top then move the button to the center-y of the modal instead of the window
+    if (m.classList.contains('modal--align-top')) {
+      transY = Math.round(mProps.height / 2 + mProps.top - trigProps.top - trigProps.height / 2);
+    }
+
+
+		// translate button to center of screen
+		trig.style.transform = 'translate(' + transX + 'px, ' + transY + 'px)';
+		trig.style.webkitTransform = 'translate(' + transX + 'px, ' + transY + 'px)';
+		// expand temporary div to the same size as the modal
+		div.style.transform = 'scale(' + scaleX + ',' + scaleY + ')';
+		div.style.webkitTransform = 'scale(' + scaleX + ',' + scaleY + ')';
+
+
+		window.setTimeout(function() {
+			window.requestAnimationFrame(function() {
+				open(m, div);
+			});
+		}, contentDelay);
+
+  };
+
+  var open = function(m, div) {
+
+    if (!isOpen) {
+      // select the content inside the modal
+      var content = m.querySelector('.modal__content');
+      // reveal the modal
+      m.classList.add('modal--active');
+      // reveal the modal content
+      content.classList.add('modal__content--active');
+
+      /**
+       * when the modal content is finished transitioning, fadeout the temporary
+       * expanding div so when the window resizes it isn't visible ( it doesn't
+       * move with the window).
+       */
+
+      content.addEventListener('transitionend', hideDiv, false);
+
+      isOpen = true;
+    }
+
+    function hideDiv() {
+      // fadeout div so that it can't be seen when the window is resized
+      div.style.opacity = '0';
+      content.removeEventListener('transitionend', hideDiv, false);
+    }
+  };
+
+  var close = function(event) {
+
+		event.preventDefault();
+    event.stopImmediatePropagation();
+
+    var target = event.target;
+    var div = document.getElementById('modal__temp');
+
+    /**
+     * make sure the modal__bg or modal__close was clicked, we don't want to be able to click
+     * inside the modal and have it close.
+     */
+
+    if (isOpen && target.classList.contains('modal__bg') || target.classList.contains('modal__close')) {
+
+      // make the hidden div visible again and remove the transforms so it scales back to its original size
+      div.style.opacity = '1';
+      div.removeAttribute('style');
+
+			/**
+			* iterate through the modals and modal contents and triggers to remove their active classes.
+      * remove the inline css from the trigger to move it back into its original position.
+			*/
+
+			for (var i = 0; i < len; i++) {
+				modals[i].classList.remove('modal--active');
+				content[i].classList.remove('modal__content--active');
+				trigger[i].style.transform = 'none';
+        trigger[i].style.webkitTransform = 'none';
+				trigger[i].classList.remove('modal__trigger--active');
+			}
+
+      // when the temporary div is opacity:1 again, we want to remove it from the dom
+			div.addEventListener('transitionend', removeDiv, false);
+
+      isOpen = false;
+
+    }
+
+    function removeDiv() {
+      setTimeout(function() {
+        window.requestAnimationFrame(function() {
+          // remove the temp div from the dom with a slight delay so the animation looks good
+          div.remove();
+        });
+      }, contentDelay - 50);
+    }
+
+  };
+
+  var bindActions = function() {
+    for (var i = 0; i < len; i++) {
+      trigger[i].addEventListener('click', getId, false);
+      closers[i].addEventListener('click', close, false);
+      modalsbg[i].addEventListener('click', close, false);
+    }
+  };
+
+  var init = function() {
+    bindActions();
+  };
+
+  return {
+    init: init
+  };
+
+}());
+
+Modal.init();
+
+
+    </script>
+{% endblock %}

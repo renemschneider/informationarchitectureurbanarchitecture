@@ -1,0 +1,51 @@
+{% extends "mobile/accueil.html" %}
+{% block ajout_head %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/asuprimer.css' %}">
+{% endblock %}
+{% block nav_bar_color %}bg-color-lancy{% endblock %}
+{% block body %}
+
+<div class="cardBox-padding-lancy">
+   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="bg-color-lancy text-dark nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ACACIA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">CAROUGE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">GRAND-LANCY</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">PETIT-LANCY</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+         <ul class="list-group list-padding-lancy">
+          <li class="list-group-item list-group-item-secondary">Bibliotheque</li>
+        </ul>
+           <ul class="list-group list-padding-lancy">
+          <li class="list-group-item list-group-item-secondary">Co-working</li>
+        </ul>
+           <ul class="list-group list-padding-lancy">
+          <li class="list-group-item  list-group-item-secondary">Maison de quartier</li>
+        </ul>
+      </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+    </div>
+</div>
+
+    <div class="jumbotron jumbotron-fluid bg-color-lancy">
+        <div class="container text-center">
+            <a role="button" href="{% url "lancyPontRougeMap" %}"
+               class="btn btn-outline-dark btn-lg {% if "/lancyPontRouge/map" in request.path %}active {% else %}text-white{% endif %}"><i
+                    class="fas fa-map-marked-alt"></i></a>
+            <a role="button" href="{% url "lancyPontRouge" %}"
+               class="btn btn-outline-dark btn-lg {% if "/lancyPontRouge/info" in request.path %}active  {% else %}text-white{% endif %}"><i
+                    class="fas fa-th-large"></i></a>
+        </div>
+    </div>
+{% endblock %}

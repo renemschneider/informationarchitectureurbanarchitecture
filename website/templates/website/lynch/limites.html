@@ -1,0 +1,42 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/lynch.css' %}">
+
+{% endblock %}
+{% block content %}
+<div class="div_lynch_tampon"></div>
+    <div class="section_flex">
+
+
+     <!--text-section-->
+     <div class="lynch-section-section">
+       <h2 class="titre_lynch">LIMITES</h2>
+         <p class="text_lynch">Les bords ou limites sont des éléments linéaires qui ne sont pas utilisés ou considérés comme des chemins par les personnes.</p>
+
+         <p class="text_lynch">Ils sont  également représentés comme des veines, des lignes qui mettent en relation deux régions différentes.</p>
+
+         <p class="text_lynch">Ils représentent les limites  entre  deux  types  d’espace  et  agissent  comme  des frontières.</p>
+
+         <p class="text_lynch">Une limite peut avoir un pouvoir perturbateur et induire l’impression de démembrer une ville ou d’isoler certaines zones.</p>
+
+        <p class="text_lynch">La continuité, la visiblité et la non accessibilté les définissent.</p>
+         <br>
+           <div class="grid-container-solo" >
+          <p class="grid-item" > <img class="img-border-patern"  src="{% static "img/lynch/limites_img.jpg" %}">
+          </p>
+           </div>
+
+        <h2 class="titre_lynch">Et sur un site web ?</h2>
+         <p class="text_lynch">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+
+         <button onclick="location.href='{% url "lynch_explication" %}'" class="bouton_section_flex text_lynch" type="button">Retour</button>
+     </div>
+     </div>
+
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

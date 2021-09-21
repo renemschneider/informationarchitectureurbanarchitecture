@@ -1,0 +1,39 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/gare.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+    <div class="sectionTexteSupplementairetitre">
+     <h4>Une vision métaphorique des quartiers</h4>
+    </div>
+    <div class="sectionTexteSupplementaire">
+        <p>Le pattern choisi représente la vision métaphorique qui est faite du quartier. (...)</p>
+    </div>
+    <div class="sectiontitre bg-color-carouge">
+            <h2>Cornavin</h2>
+    </div>
+     <div class="container_patern" id="section_explication">
+        <div class="titre_patern_cor"><h2 class="text_margin">Analyse gare</h2></div>
+        <p class="text_padding">La gare de Cornavin dessert quatre quartiers : Grottes, Servette, Pâquis et Saint-Gervais.</p>
+        <p class="text_padding"><b>Orientation</b></p>
+        <p class="text_padding">L'orientation au sortir de la gare est bonne. L'utilisateur s'oriente facilement grâce à des points de repère. La Nouvelle Comédie juste à la sortie de la gare en offre un important.</p>
+        <p class="text_padding"><b>Circulation (Navigation)</b></p>
+        <p class="text_padding">Les zones environnantes sont accessibles.</p>
+        <p class="text_padding" ><b>Conception visuelle</b></p>
+        <p class="text_padding">-</p>
+        <div class="titre_patern_cor"><h2 class="text_margin">Patern: Film Strip</h2></div>
+        <p class="text_padding"><b>Justification pattern</b></p>
+        <p class="text_padding">Le pattern Vertical Stacks avec photographies organise le contenu en blocs disposés en colonne verticale. L'utilisateur se répère facilement et trouve rapidement ce qu'il recherche.</p>
+    </div>
+
+    <div class="sectionButton bg-color-carouge">
+        <button onclick="location.href='{% url "cornavinM" %}'" class="boutonbasdepage" type="button"><i class="fas fa-map-marked-alt"></i></button>
+        <button onclick="location.href='{% url "cornavinP" %}'" class="boutonbasdepage" type="button"><i class="fas fa-th-large"></i></button>
+    </div>
+
+{% endblock %}
+{% block js %}
+{% endblock %}

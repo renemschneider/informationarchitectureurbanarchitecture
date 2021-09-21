@@ -1,0 +1,86 @@
+
+@import url(https://allfont.net/allfont.css?fonts=agency-fb);
+h1,h2,h3,h4,h5,h6
+{
+    font-family: 'Agency FB', arial; !important;
+}
+
+.section_flex_inverted {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-around;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@media screen and (min-width: 900px) {
+    .section_flex_inverted {
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-around;
+      padding-top: 20px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+}
+
+.input_form{
+   width: 90%;
+}
+
+
+.bottom-section {
+  width: 60%;
+  padding: 20px;
+  margin: 0px !important;
+}
+
+.titre_bottom{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 40px;
+
+}
+
+@media screen and (max-width: 1400px) {
+  .bottom-section {
+    width: 100%;
+    margin:0 3vh;
+  }
+
+}
+
+
+.couleur_question
+{
+    color: #164265;
+}
+
+.cotainer_reponse
+{
+    border: 2px solid #a6a6a6;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.bouton_section_flex
+{
+    text-align: center;
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 24px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.bouton_section_flex:hover {
+  background-color:white;
+  color:  #262626;
+  cursor: pointer;
+}

@@ -1,0 +1,52 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block head_ajout %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/lynch.css' %}">
+
+{% endblock %}
+{% block content %}
+    <div class="div_lynch_tampon"></div>
+    <div class="section_flex">
+
+
+     <!--text-section-->
+     <div class="lynch-section">
+       <h2 class="titre_lynch">KEVIN LYNCH</h2>
+         <p class="text_lynch">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+         <br>
+         <h2 class="titre_lynch">LES CINQ PRINCIPES URBAINS</h2>
+       <p class="text_lynch"> L’utilisateur serait capable de réagir avec l’espace qui l’entoure grâce à la connaissance de ce dernier et à la formation d’une image mentale. Le concept de « image de la ville » a été introduit par les psychologues et approfondi par les urbanistes travaillant sur l’orientation dans l’espace.</p>
+       <p class="text_lynch">La contribution la plus riche et influente dans ce sens a été fournie par Kevin Lynch (1960) qui a identifié cinq principes qui sont repérables dans les villes et qui interviennent dans la construction d’une image mentale (Fattahi, Kobayashi, 2009).</p>
+         <div class="grid-container" >
+          <a class="grid-item"  href="{% url "lynch_voies" %}"><img class="img-border" src="{% static "img/lynch/path.png" %}">
+          </a>
+          <a class="grid-item" href="{% url "lynch_noeuds" %}"><img class="img-border"  src="{% static "img/lynch/node.png" %}">
+          </a>
+           <a class="grid-item" href="{% url "lynch_points_repere" %}"><img class="img-border"  src="{% static "img/lynch/landmark.png" %}">
+          </a>
+           <h2 class="grid-item" style=" color: white;">Chemin</h2>
+           <h2 class="grid-item" style="color: white;">Noeud</h2>
+           <h2 class="grid-item" style="color: white;">Point de Repère</h2>
+           <a class="grid-item" href="{% url "lynch_quartiers" %}"><img class="img-border" src="{% static "img/lynch/district.png" %}">
+          </a>
+               <a  class="grid-item" href="{% url "lynch_limites" %}"><img  class="img-border" src="{% static "img/lynch/edge.png" %}">
+              </a>
+             <h2 class="grid-item" style="color: white;"></h2>
+             <h2 class="grid-item" style="color: white; margin-top: 0px;">Quartier</h2>
+           <h2 class="grid-item" style="color: white; margin-top: 0px">Limite</h2>
+        </div>
+
+        <h2 class="titre_lynch">Et sur un site web ?</h2>
+         <p class="text_lynch">Dans la construction des sites web et des applications, les designers interviennent sur l’espace de la même manière que les architectes fabriquant les espaces physiques dans lesquels les humains bougent, interagissent et vivent (Kowalski, 2015).
+             Afin de rendre possible aux utilisateurs de bouger dans l’espace virtuel et de s’approcher ainsi de la chose qu’ils cherchent, les web designers répondent aux mêmes principes d’organisation de l’espace qui régissent l’architecture.
+             D’après Jorge Arango (2017), il est tout à fait possible d’établir une analogie entre les composantes de l’User Experience (UX) et les principes urbains identifiés par Kevin Lynch.</p>
+     </div>
+
+</div>
+
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "mobile/accueil.html" %}
+{% block ajout_head %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/asuprimer.css' %}">
+{% endblock %}
+{% block nav_bar_color %}bg-color-cornavin{% endblock %}
+{% block body %}
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item carousel-padding-cornavin"
+         data-ride="carousel" data-interval="false">
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+                <div class="col-md-12" style="float:left">
+                    <div class="card mb-2 card-size-cornavin">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">1 Grottes</h4>
+                            <ul>
+                                <li class="list-padding">Bibliotheque</li>
+                                <li class="list-padding">Co-working</li>
+                                <li class="list-padding">Maison de quartier</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.First slide-->
+
+            <!--Second slide-->
+            <div class="carousel-item">
+                <div class="col-md-12" style="float:left">
+                    <div class="card mb-2 card-size-cornavin">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">2 Grottes</h4>
+                            <ul>
+                                <li class="list-padding">Bibliotheque</li>
+                                <li class="list-padding">Co-working</li>
+                                <li class="list-padding">Maison de quartier</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.Second slide-->
+
+            <!--Third slide-->
+            <div class="carousel-item">
+                <div class="col-md-12" style="float:left">
+                    <div class="card mb-2 card-size-cornavin">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">3 Grottes</h4>
+                            <ul>
+                                <li class="list-padding">Bibliotheque</li>
+                                <li class="list-padding">Co-working</li>
+                                <li class="list-padding">Maison de quartier</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Third slide-->
+
+            <!--Forth slide-->
+            <div class="carousel-item">
+                <div class="col-md-12" style="float:left">
+                    <div class="card mb-2 card-size-cornavin">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">4 Grottes</h4>
+                            <ul>
+                                <li class="list-padding">Bibliotheque</li>
+                                <li class="list-padding">Co-working</li>
+                                <li class="list-padding">Maison de quartier</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Forth slide-->
+
+        </div>
+        <!--/.Slides-->
+
+        <!--Indicators
+
+        <ol class="carousel-indicators text-dark">
+          <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+          <li data-target="#multi-item-example" data-slide-to="1"></li>
+        </ol>
+
+         Indicators-->
+
+
+        <!--Controls-->
+        <div class="text-center changeSlide-padding-cornavin">
+            <a class="btn btn-lg " href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+            <a class="btn btn-lg" href="#multi-item-example" data-slide="next"><i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+        <!--/.Controls-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+    <div class="jumbotron jumbotron-fluid bg-color-cornavin">
+        <div class="container text-center">
+            <a role="button" href="{% url "cornavinMap" %}"
+               class="btn btn-outline-dark btn-lg {% if "/cornavin/map" in request.path %}active {% else %}text-white{% endif %}"><i
+                    class="fas fa-map-marked-alt"></i></a>
+            <a role="button" href="{% url "cornavin" %}"
+               class="btn btn-outline-dark btn-lg {% if "/cornavin/info" in request.path %}active  {% else %}text-white{% endif %}"><i
+                    class="fas fa-th-large"></i></a>
+        </div>
+    </div>
+{% endblock %}

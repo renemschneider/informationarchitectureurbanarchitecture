@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Stephane Jermini">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visiter un site internet comme on visite une ville">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/menu.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script type="text/javascript" src="{% static 'js/lib/jquery-3.6.0.min.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/website/menu.css' %}">
+
+
+
+    <title>{% block titre %}{% endblock %}</title>
+    {% block head_ajout %}
+    {% endblock %}
+</head>
+<body>
+    <section class="navigation {% block couleurNav %}{% endblock %}">
+      <div class="nav-container">
+        <div class="brand">
+          <a class=" {% block couleurTitre %}{% endblock %}" href="{% url "home" %}">{% block titregare %}UEN{% endblock %}</a>
+        </div>
+
+        <nav>
+          <div class="nav-mobile"><a id="nav-toggle" href="#"><span></span></a></div>
+          <ul class="nav-list">
+            <li>
+              <a href="{% url "home" %}">Accueil</a>
+            </li>
+            <li>
+              <a href="{% url "lynch_explication" %}">About Lynch</a>
+            </li>
+            <li>
+              <a href="#">Gare</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="{% url "cornavinM" %}">Cornavin</a>
+                </li>
+                <li>
+                  <a href="{% url "pontRougeM" %}">Pont-Rouge</a>
+                </li>
+                <li>
+                  <a href="{% url "bachetM" %}">Bachet</a>
+                </li>
+                  <li>
+                  <a href="{% url "champelM" %}">Champel</a>
+                </li>
+                  <li>
+                  <a href="{% url "eauxVivesM" %}">Eaux-Vives</a>
+                </li>
+                  <li>
+                  <a href="{% url "cheneBourgM" %}">Chêne-Bourg</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="{% url "formulaire" %}">Formulaire</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    {% block content %}
+    {% endblock %}
+    {% include "website/footer.html" %}
+    {% block modal %}
+    {% endblock %}
+</body>
+</html>
+<script src="https://kit.fontawesome.com/5d0018732f.js" crossorigin="anonymous"></script>
+<script>
+    (function($) { // Begin jQuery
+      $(function() { // DOM ready
+        // If a link has a dropdown, add sub menu toggle.
+        $('nav ul li a:not(:only-child)').click(function(e) {
+          $(this).siblings('.nav-dropdown').toggle();
+          // Close one dropdown when selecting another
+          $('.nav-dropdown').not($(this).siblings()).hide();
+          e.stopPropagation();
+        });
+        // Clicking away from dropdown will remove the dropdown class
+        $('html').click(function() {
+          $('.nav-dropdown').hide();
+        });
+        // Toggle open and close nav styles on click
+        $('#nav-toggle').click(function() {
+          $('nav ul').slideToggle();
+        });
+        // Hamburger to X toggle
+        $('#nav-toggle').on('click', function() {
+          this.classList.toggle('active');
+        });
+      }); // end DOM ready
+    })(jQuery); // end jQuery
+    </script>
+{% block js %}
+{% endblock %}
